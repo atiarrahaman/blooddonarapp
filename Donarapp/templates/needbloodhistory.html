@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block dashbord %}
+Need Blood History
+{% endblock dashbord %}
+{% block content %}
+<h4 class="alert alert-success text-center"> Your Request history</h4>
+  <div class="container">
+    <div class="row">
+      {% if fm %}
+      {% for i in fm %}
+        <div class="col-md-4">
+         <div class="donate_history"> 
+   
+                 
+           <div class="donate_content">
+             <p> <b>Name :</b> <span>{{i.user|title}}</span> </p>
+             <p> <b>Request No :</b> <span>{{i.id}}</span> </p>
+             <p> <b>Blood grp :</b>{{i.blood_group}} </p>
+             <p> <b>Phone :</b>{{i.phone}} </p>
+             <p> <b>Hospital :</b>{{i.hospital}} </p>
+             <p> <b>Donate Date :</b>{{i.date}} </p>
+             <p> <b>Apply date :</b> {{i.apply_date}}</p>
+             <p> <b> Action :</b>{% if i.done_status == True %} <span class="text-success">Approved</span> {% elif i.status == True  and i.done_status == False %} <span class="text-danger">Rejects</span> {% else %} <span class="text-warning">Pending</span> {% endif %} </p>
+           </div>
+           
+            
+            
+         </div>
+     </div>
+     {% endfor %}
+     {%else %}
+     <h4 class="text-danger">No data</h4>
+     {% endif %}
+    </div>
+  </div>
+
+  {% endblock content %}

@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block dashbord %}
+ Profile
+{% endblock dashbord %}
+<style>
+    .card{
+    padding: 1.5em .5em .5em;
+    border-radius: 2em;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+
+}
+</style>
+{% block content %}
+
+    <!-- <div class="container">
+        <div class="row d-flex justify-content-center mt-5 mb-5">
+            <div class="col-md-6 m-auto">
+                <h4 class="bg-danger p-2 text-center rounded">{{user.first_name|title}}     </h4>
+               
+            </div>
+        </div>
+        <div class="profiles col-md-10 m-auto">
+            <div class="jumbotron pt-2 pb-2">
+                <div class="title text-center mb-3">
+    
+                </div>
+               <a href="{% url 'profile_edit' %}"> <h4 title="Edit"  class="text-right" style="cursor: pointer;"> <i  class="fas fa-user-edit"></i></h4></a>
+
+                <div class="row ">
+                    <div class="col-lg-4">
+                        <a href=""><img style="width:200px;height:200px;" src="{{data.profile_pic.url}}" class=" img-fluid rounded-circle" alt=""></a>
+                        
+                    </div>
+                    <div class="col-lg-4">
+                        
+                        <p> <b> ID NO</b> : <span >{{data.id}}</span> </p> 
+
+                        <p><b>Blood Grp</b> : <span>{{data.bloodgroup}}</span> </p>
+                        <p><b>Last Donate</b> : <span>{{data.last_donate}}</span> </p>
+                        <p><b>Date of Birth</b> : <span>{{data.dob}}</span> </p>
+                        
+                     </div>
+                    <div class="col-lg-4">
+                        <p><b> AGE</b>: <span>{{data.age}}</span> </p>
+                        <p><b> Phone</b>: <span>{{data.phone}}</span> </p>
+                        <p><b>Email</b> : <span>{{data.email}}</span> </p>
+                        <p><b>Address</b> : <span>{{data.address}}</span> </p>
+                        <p><b> Distic</b>: <span>{{data.district}}</span> </p>
+                       
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+     
+  
+            
+        </div>        -->
+     
+        
+<div class="main_body">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+               <div class="profile_box">
+                <a href=""><img style="width:200px;height:200px;" src="{{data.profile_pic.url}}" class="  img-thumbnail" alt=""></a>
+                
+                 <h4>{{user.first_name|title}}</h4>
+                        
+                    <div class="profile_content">
+                    <p><b>ID NO</b> : <span >{{data.id}}</span> </p> 
+
+                    <p><b>Blood Grp</b> : <span>{{data.bloodgroup}}</span> </p>
+                    <p><b>Last Donate</b> : <span>{{data.last_donate}}</span> </p>
+                    <p><b>Date of Birth</b> : <span>{{data.dob}}</span> </p>
+                    
+                 
+                    <p><b>AGE</b>: <span>{{data.age}}</span> </p>
+                    <p><b>Phone</b>: <span>{{data.phone}}</span> </p>
+                    <p><b>Email</b> : <span>{{data.email}}</span> </p>
+                    <p><b>Address</b> : <span>{{data.address}}</span> </p>
+                    <p><b>Distic</b>: <span>{{data.district}}</span> </p>
+                    </div>
+                   
+                
+
+
+           
+            
+            
+            </div>
+    
+    
+            </div>
+            <div class="col-md-4"></div>
+           
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock content %}

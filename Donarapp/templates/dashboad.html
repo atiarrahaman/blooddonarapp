@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block dashbord %}
+Home
+{% endblock dashbord %}
+{% block content %}
+
+{% if messages %}
+{% for message in messages %}
+ <p {% if message.tags %} class="{{message.tags}}  alert alert-success text-center"  {% endif%}> {{message}}</p>
+{% endfor %}
+{% endif %}  
+{% endblock content %}

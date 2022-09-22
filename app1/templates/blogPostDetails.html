@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block layoutcontent %}
+
+<div class="container">
+    <div class="row">
+       
+       <div class="col-sm-12">
+         
+        <div class="detailspost">
+            <button> <a href="{% url 'blogpost'  %}"> <i class="fas fa-arrow-circle-left"></i> </a> </button>
+          <div class="user">
+            <img class="rounded-circle" style="width:40px;height:40px;"  src="{{post.user.totaldonar.profile_pic.url}}" class="img-avatar" alt=""> <span> <b>{{post.author}}</b> </span>
+             <p><i class="fas fa-calendar-alt"></i> {{post.creat_date|naturaltime}} </p>
+             </div>
+          <div class="img">
+            <img src="{{post.upload_pic.url}}" alt="">
+          </div>
+         <div class="content">
+            <h3>{{post.title}}</h3>
+            <p>{{post.text}} </p>
+          </div>
+          <hr>
+        <h4 class="text-danger">Commet section Not Yet Open</h4>
+       
+          </div>
+      </div>
+      
+    </div>
+  </div>
+
+
+{% endblock layoutcontent %}

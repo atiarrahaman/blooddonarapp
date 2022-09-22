@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block layoutcontent%}
+   <section id="fm">
+
+    <div class="container">
+        <div class="row">
+            
+            <div class="login ">
+                <form action="" method="POST" novalidate class="shadow p-5 form">
+                   {% csrf_token %}
+                    <h3 class="text-center mb-2">Login Form</h3>
+
+                   {% if messages %}
+                   {% for message in messages %}
+                    <p {% if message.tags %} class="{{message.tags}}  alert alert-success text-center"  {% endif%}> {{message }} </p>
+                   {% endfor %}
+                   {% endif %}  
+                    {{form.as_p}}
+
+                    
+           
+                    <input type="submit" value="Login" class="button btn btn-primary">
+                    
+                    <p class="mt-2">Create account <a href="{% url 'singup' %}">Singup</a> </p>
+                </form>
+                
+            </div>
+            
+        </div>
+    </div>
+   </section>
+{% endblock layoutcontent%}

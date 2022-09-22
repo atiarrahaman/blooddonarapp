@@ -1,0 +1,190 @@
+ <!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>ABD CLUB</title>
+
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.min-1.css'%}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'font/fontawesome-free-5.15.4-web/css/all.min.css' %}">
+<link href="{% static 'css/style.css'%}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/dashboardstyle.css' %}">
+<link href="{% static 'css/responsive.css'%}" rel="stylesheet">
+
+   
+
+
+<style>
+
+
+
+ 
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- <header class="app-header navbar" >
+  
+    <a class="navbar-brand" href="#"></a>
+    
+
+  
+    <ul class="nav navbar-nav ml-auto">
+        
+        <li class="nav-item dropdown">
+            
+            <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button"
+            aria-haspopup="true" aria-expanded="false">
+            
+                <img style="width:40px;height:40px;" src="{{request.user.totaldonar.profile_pic.url}}" class="img-avatar" alt="">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-header text-center">
+                    <strong>Account</strong>
+                </div>
+                
+                <a class="dropdown-item" href=""><i class="fa fa-user"></i> Profile</a>
+                <a class="dropdown-item" href=""><i class="fa fa-user"></i>User Details</a>
+                <a class="dropdown-item" href=""><i class="fa fa-wrench"></i> Settings</a>
+                
+                <a class="dropdown-item" href=""><i class="fa fa-lock"></i> Logout</a>
+            </div>
+        </li>
+    </ul>
+    <button class="navbar-toggler aside-menu-toggler" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</header> -->
+<section class="bg-danger fixed-top" >
+  <div class="container">
+    <div class="row">
+      <div class="text col-lg-4 col-md-4 col-sm-4 col-2  ">
+        <h3>Blood Donar</h3>
+      </div>
+
+
+      
+      <div class="col-lg-4 offset-lg-4 col-md-4 offset-4 col-sm-4 col-4 " >
+        <div class="navbar navbar-expand  ">
+ 
+        <div class="navbar-collapse collapse ">
+               <ul class="navbar-nav ml-auto">
+                  
+                 <li class="nav-item dropdown">
+                     
+                   <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button"
+                   aria-haspopup="true" aria-expanded="false">
+                   
+                       <img class="rounded-circle" style="width:40px;height:40px;"  src="{{request.user.totaldonar.profile_pic.url}}" class="img-avatar" alt="">
+                   </a>
+                   <div class="dropdown-menu dropdown-menu-right">
+                       <div class="dropdown-header text-center">
+                           <strong>Account</strong>
+                       </div>
+                       
+                       <a class="dropdown-item" href="{% url 'profile' %}"><i class="fa fa-user"></i> Profile</a>
+                       <a class="dropdown-item" href="{% url 'creat_post' %}"><i class="fas fa-quidditch"></i>Creat Post</a>
+                       <a class="dropdown-item" href="{% url 'profile_edit' %}"><i class="fa fa-wrench"></i> Edit Profile</a>
+                       
+                       <a class="dropdown-item" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                   </div>
+               </li>
+               </ul>
+           </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+
+<nav id="nav">
+  
+
+  <div class="menu-items">
+      <ul class="nav-links">
+   <li><a style="text-decoration:none;" href="{% url 'blogpost'%}"><i class="fas fa-home"></i> <span class="link-name">Home</span>  </a></li>
+    <li><a style="text-decoration:none;" href="{% url 'donation_blood'%}"><i class="fas fa-minus-circle"></i> <span class="link-name">Donate Blood</span></a></li>
+    <li><a style="text-decoration:none;" href="{% url 'donation_history'%}"><i class="fas fa-history"></i><span class="link-name">Donate history</span></a></li>
+    <li><a style="text-decoration:none;" href="{% url 'apply_need_blood' %}"><i class="fas fa-plus-circle"></i><span class="link-name">Request Blood</span></a></li>
+    <li><a style="text-decoration:none;" href="{% url 'need_blood_history' %}"><i class="fas fa-history"></i><span class="link-name">Request History</span></a></li>
+      </ul>
+      
+      <ul class="logout-mode">
+          <li><a href="{% url 'logout' %}">
+              <i class="fas fa-sign-out-alt"></i>
+              <span class="link-name">Logout</span>
+          </a></li>
+          <li class="mode">
+                   
+
+            <div class="mode-toggle">
+             
+            </div>
+        </li>
+         
+      </ul>
+  </div>
+</nav>
+
+<section class="dashboard">
+  <div class="top">
+      
+      <i class="fas fa-bars  sidebar-toggle"></i>
+
+     </div>
+  
+  
+  
+  
+  
+  <div class="dash-content">
+      <div class="overview">
+          <hr>
+          {% block content %}
+
+         {% endblock content %}
+         
+        
+      </div>
+
+      
+  </div>   
+</section>
+
+    <script src="{% static 'js/jquery-3.4.0.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.jsn.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+   
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

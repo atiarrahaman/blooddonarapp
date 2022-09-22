@@ -1,0 +1,46 @@
+<!-- {% extends "layout.html" %}
+{% block layoutcontent%}
+<div class="main_body">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            {% for data in data %}
+            <div class="col-md-4">
+                <div class="profile_box">
+                 <a href=""><img style="width:200px;height:200px;" src="{{data.profile_pic.url}}" class="  img-thumbnail" alt=""></a>
+                 
+                  <h4>{{user.first_name|title}}</h4>
+                         <button>Add Friend</button> <button>Messaege</button>
+                     <div class="profile_content">
+                     <p><b>ID NO</b> : <span >{{data.id}}</span> </p> 
+ 
+                     <p><b>Blood Grp</b> : <span>{{data.bloodgroup}}</span> </p>
+                     <p><b>Last Donate</b> : <span>{{data.last_donate}}</span> </p>
+                     <p><b>Date of Birth</b> : <span>{{data.dob}}</span> </p>
+                     
+                  
+                     <p><b>AGE</b>: <span>{{data.age}}</span> </p>
+                     <p><b>Phone</b>: <span>{{data.phone}}</span> </p>
+                     <p><b>Email</b> : <span>{{data.email}}</span> </p>
+                     <p><b>Address</b> : <span>{{data.address}}</span> </p>
+                     <p><b>Distic</b>: <span>{{data.district}}</span> </p>
+                     </div>
+                    
+                 
+ 
+ 
+            
+             
+             
+             </div>
+     
+     
+             </div>
+            {% endfor %}
+            <div class="col-md-4"></div>
+           
+        </div>
+    </div>
+</div>
+
+{% endblock layoutcontent%} -->

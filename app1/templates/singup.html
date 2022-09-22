@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block layoutcontent%}
+   <section id="fm">
+    
+    <div class="container">
+        <div class="row">
+            
+            <div class="singup">
+                <form action="" method="POST" enctype='multipart/form-data' novalidate class="shadow p-5 form">
+                   {% csrf_token %}
+                   <h3 class="text-center mb-2">Singup Form</h3>
+                         {% if messages %}
+                           {% for msz in messages %}
+                            <h3 {% if msz.tags %} class="text-success" {% endif %} >{{msz}}</h3>
+                            {% endfor %}
+                            {% endif %}
+               {% for form in fm %}
+                  {{form.label_tag}}  {{form}} <span class="error_list">{{form.errors|striptags}}</span> <br> <br>
+               {% endfor %}
+
+               {% for fm in form %}
+               {{fm.label_tag}}  {{fm}} <span class="error_list">{{fm.errors|striptags}}</span> <br> <br>
+            {% endfor %}
+            {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+               <p class="text-danger">{{error}}</p>
+            {% endfor %}
+            {% endif %}
+            {{form.none_field_errors}}
+
+
+            {% if fm.non_field_errors %}
+            {% for error in fm.non_field_errors %}
+               <p class="text-danger">{{error}}</p>
+            {% endfor %}
+            {% endif %}
+            {{fm.none_field_errors}}
+                    <input type="submit" value="Singup" class="button btn btn-primary">
+                    <p class="mt-2">allready have account <a href="{% url 'login' %}">Login</a> </p>
+                </form>
+                
+            </div>
+            
+        </div>
+    </div>
+   </section>
+{% endblock layoutcontent%}

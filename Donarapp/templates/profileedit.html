@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block dashbord %}
+ Profile Edit Form
+{% endblock dashbord %}
+{% block content %}
+<h4 class="alert alert-success text-center"> Edit Your Profile</h4>
+<section id="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <form action="" method="POST" enctype='multipart/form-data' class="shadow-lg p-5 mb-5 rounded" novalidate>
+                    {% csrf_token %}
+                   
+                     {{form.as_p}}
+                    <input type="submit" value="save" class="btn btn-primary">
+                </form>
+   
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

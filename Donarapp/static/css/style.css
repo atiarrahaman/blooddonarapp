@@ -1,0 +1,478 @@
+/* menu section start */
+.text h3{
+	color: #ddd;
+	margin-top: 15px;
+}
+
+.layouttop{
+	margin-top: 100px;
+}
+.error_list{
+	color: red;
+}
+
+#main_header {
+	
+	padding: 10px;
+  }
+
+
+#menu ul li {
+	margin-left: 30px;
+	position: relative;
+	margin-top: 5px;
+	
+}
+#menu ul li i{
+	
+	font-size: 30px;
+}
+#menu ul li a{
+	color: rgb(16, 15, 15);
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: large;
+	transition:.4s;
+}
+
+#menu ul li a:hover{
+	color: rgb(243, 234, 234);
+}
+
+#menu ul li a.active{
+	color: rgb(244, 239, 239);
+}
+
+
+#menu ul li:after{
+	position: absolute;
+	width: 0px;
+	height:3px;
+	bottom: 0;
+	left: 0;
+	background: rgb(237, 237, 237);
+	content: "";
+	transition: .4s;
+	
+}
+#menu ul li:hover:after{
+	width: 100%;
+} 
+
+/* menu  section end */
+
+
+/* =====================banner section start==================  */
+
+
+.banner1{
+	
+	height: 500px;
+	background-image: url("../img/appointment_female_bg.jpg");
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.banner2{
+	
+	height: 500px;
+	background-image: url("../img/home_1_slider_2.jpg");
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+
+ .banner3{
+	
+	height: 500px;
+	background-image: url("../img/home_1_slider_1.jpg");
+	background-repeat: no-repeat;
+    background-size: cover;
+}
+.overlay{
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0,.7);
+}
+
+.appon_contant{
+	text-align: right;
+	margin-top: 210px;
+	
+}
+
+.appon_contant h1{
+	color: #fff;
+	font-size: 56px;
+	font-weight: 700px;
+
+}
+.appon_contant h4{
+	color: #fff;
+	font-size: 32px;
+	font-weight: 400px;
+	margin: 30px 0px;
+	position: relative;
+
+}
+.appon_contant h4:after{
+
+	width: 200px;
+	height: 2px;
+	background: #f1f1f1;
+	position: absolute;
+	content: " ";
+	bottom: -30px;
+	right: 0;
+}
+.appon_contant p{
+	margin-top: 60px;
+	color: #fff;
+	font-size: 18px;
+	font-weight: 400px;
+	
+	
+
+}
+.appon_contant h1::first-letter{
+	color: rgb(245, 34, 34);
+}
+
+.appon_contant .btn2 {
+	text-decoration: none;
+	display:inline-block;
+	background: #f1f1f1;
+	color: #000;
+	padding: 10px 50px;
+	position: relative;
+	border-radius: 5px;
+	text-align: left;
+	margin-top: 30px;
+	margin-left: 10px;
+	transition: .4s;
+}
+.appon_contant a span{
+	font-size: 25px;
+	display:block;
+	
+}
+.appon_contant .btn2 i{
+	font-size: 40px;
+	position: absolute;
+	top: 20px;
+	left: 10px;
+	
+}
+
+
+
+
+.appon_contant .btn1 {
+	text-decoration: none;
+	display:inline-block;
+	background: rgb(245, 34, 34);
+	color: #fff;
+	padding: 10px 50px;
+	position: relative;
+	border-radius: 5px;
+	text-align: left;
+	margin-top: 30px;
+	margin-left: 3px;
+	transition: .4s;
+}
+.appon_contant a span{
+	font-size: 25px;
+	display:block;
+	
+}
+.appon_contant .btn1 i{
+	font-size: 40px;
+	position: absolute;
+	top: 20px;
+	left: 10px;
+	
+}
+
+
+.btn1:hover{
+	background: #fff;
+	color: black;
+}
+.btn2:hover{
+	background: rgb(245, 34, 34);
+	color: #fff;
+}
+.slick-dots{
+
+	position: absolute;
+	top: 50%;
+	right: 40px;
+	transform: translateY(-50%);
+
+}
+.slick-dots li{
+	margin-top: 10px;
+	
+  position: relative;
+}
+
+.slick-dots li:after{
+    position: absolute;
+	width: 10px;
+	height: 10px;
+	top: 62%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: rgb(245, 34, 34);
+	border-radius: 50%;
+	content: " ";
+	cursor: pointer;
+	opacity: 0;
+	
+}
+.slick-dots .slick-active:after{
+	opacity: 1;
+}
+.slick-dots li button{
+
+	font-size: 0px;
+	width: 20px;
+	height: 20px;
+	border: 2px solid rgb(248, 245, 245);
+	background: transparent;
+	border-radius: 50%;
+	outline-style: none !important;
+	
+}
+/* =====================banner section end==================  */
+
+/*===================== Why blood section Start===================== */
+
+#why_blood{
+	padding: 50px;
+}
+.title h2{
+	font-family: 'Satisfy', cursive;
+}
+
+
+
+
+
+
+
+
+/*===================== Why blood section end ===================== */
+
+
+
+
+
+/*===================== fotter start===================== */
+
+
+#fotter{
+	background:rgb(8, 1, 1) ;
+	padding: 50px;
+	text-align: center;
+	color: #fff;
+	margin-top: 20px;
+}
+
+
+.form{
+	
+	margin-bottom: 250px;
+    background-color: plum;
+	border-radius: 5px;
+}
+
+ 
+
+/* user menu  */
+
+#sidebarMenu{
+	background: black;
+}
+.menu ul li a{
+	color: black;
+	transition: .4;
+
+}
+.menu ul li{
+	margin-top: 10px;
+}
+.menu ul li a:hover{
+	background-color: #6c757d;
+	color: #fff;
+	border-radius: 5px;
+}
+
+.menu ul li a.active{
+	background: #6c757d;
+	border-radius: 5px;
+
+}
+/* profile card style */
+.card {
+	padding: 10px;
+	border-radius: 5px;
+}
+h1{
+	padding: 5px;
+}
+.card img{
+	width: 250px;
+	height: 250px;
+	margin-left: 100px;
+	margin-bottom:70px ;
+}
+.card a{
+	text-align: right;
+}
+.card a i{
+	font-size: 25px;
+}
+.profiles{
+	background-color: rgb(245, 34, 34);
+}
+
+#creat_donar{
+	background: #853e3e;
+	color: #f1f1f1;
+}
+
+.texts span{
+	text-indent: 100px;
+}
+
+/* blood app css */
+
+.box{
+	background:rgb(245, 34, 34); 
+	color: #f1f1f1;
+	font-size: 25px;
+	padding: 20px;
+	border-radius: 5px;
+	margin-top: 50px;
+}
+
+.box p i{
+	color: #f1f1f1;
+}
+
+.title h5{
+	text-align: center;
+}
+
+.post{
+	
+	background-color: #ddd;
+	padding: 10px;
+	margin-top:10px;
+	width: 350px;
+	height: 470px;
+	
+}
+
+.img{
+	text-align:center;
+	
+}
+.post .img img{
+	width:200px;
+	height:200px;
+	margin-top: 10px;
+}
+
+.post .user p{
+	margin-left: 60px;
+	line-height: 0px;
+}
+.post h4{
+	margin-top: 20px;
+	font-family: 'Satisfy', cursive;
+}
+.post  a{
+	text-decoration: none;
+}
+/* details post */
+
+.detailspost .img img{
+	width: 500px;
+	height: 400px;
+}
+
+.detailspost .content{
+	margin-top: 30px;
+}
+
+.detailspost .user p{
+	margin-left: 60px;
+	line-height: 0px;
+}
+.detailspost button a i {
+	margin-bottom: 10px;
+}
+/* profile page css */
+
+.profile_box{
+	background-color: rgb(93, 193, 223);
+	margin-top: 50px;
+	text-align: center;
+	padding: 10px  0;
+	border-radius: 7px;
+	
+}
+.profile_box h4{
+	margin-top: 15px;
+	border-bottom: 1px dashed red;
+}
+.profile_content{
+	text-align: justify;
+	text-indent: 50px;
+	margin-top: 20px;
+}
+.donate_history{
+	display:none;
+	background-color: rgb(93, 193, 223);
+	margin-top: 50px;
+	
+	padding: 10px  0;
+	border-radius: 7px;
+}
+.donate_history p{
+	text-indent: 50px;
+}
+.donate_history  a{
+	margin-left: 50px;
+}
+
+/* login section design */
+
+.login{
+	width: 300px;
+	height: 500px;
+	margin: auto;
+	margin-top: 30px;
+}
+
+
+.login .button {
+	width: 100%;
+	
+	
+}
+
+.singup{
+	width: 400px;
+	height: 1200px;
+	margin: auto;
+	margin-top: 30px;
+}
+
+.singup .button {
+	width: 100%;
+	
+	
+}/* All donar table css */
+
+

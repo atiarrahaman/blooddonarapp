@@ -1,0 +1,51 @@
+{% extends "adminbase.html" %}
+{% load static %}
+{% block dashbord %}
+       All Donar 
+{% endblock dashbord %}
+
+{% block content %}
+<h4 class="alert alert-success text-center"> Total Donar user</h4>
+<div class="container">
+    <div class="row ">
+      <table class=" alldonartable table table-hover table-striped table-bordered mt-4 ">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Blood grp</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Last Donate</th>
+            
+             
+
+              
+              
+            </tr>
+          </thead>
+          <tbody>
+          {%  for i in alldonar %}
+            <tr class="table-success">
+          
+              <td >{{i.id}}</td>
+              <td >{{i.user}}</td>
+              <td >{{i.bloodgroup}}</td>
+              <td >{{i.phone}}</td>
+              <td >{{i.last_donate}}</td>
+             
+
+              
+             
+              
+              
+            </tr>
+  
+          {%  endfor %}
+            
+              
+            </tr>
+          </tbody>
+        </table>
+    </div>
+</div>
+{% endblock content %}

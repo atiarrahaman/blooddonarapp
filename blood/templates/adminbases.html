@@ -1,0 +1,318 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>ABD CLUB</title>
+
+
+    <!-- Bootstrap core CSS -->
+<link href="{% static 'css/bootstrap.min-1.css'%}" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'font/fontawesome-free-5.15.4-web/css/all.min.css' %}">
+<link href="{% static 'css/style.css'%}" rel="stylesheet">
+<link href="{% static 'css/responsive.css'%}" rel="stylesheet">
+
+   
+
+
+<style>
+
+
+
+ 
+
+  .row{
+      padding: 5px;
+  }
+  .fa-tint{     
+      color: red;    
+  }
+  .blood{
+      float: right;
+  }
+  .fa-users{     
+      color: blue; 
+      font-size: 3ex;   
+  }
+  .fa-spinner{     
+      color: blue; 
+      font-size: 3ex;   
+  }
+  .fa-check-circle{     
+      color: blue; 
+      font-size: 3ex;   
+  }
+  .xyz{     
+      color: blue; 
+      font-size: 3ex;   
+  }
+
+*{
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+list-style: none;
+text-decoration: none;
+font-family: 'Josefin Sans', sans-serif;
+}
+
+body{
+ background-color: #f3f5f9;
+}
+.bg-danger {
+  background-color: #ff0018!important;
+}
+
+.wrapper{
+display: flex;
+position: relative;
+}
+
+.wrapper .sidebar{
+width: 200px;
+height: 100%;
+background: 	#343a40;
+padding: 30px 0px;
+position: fixed;
+}
+
+.wrapper .sidebar h2{
+color: #fff;
+text-transform: uppercase;
+text-align: center;
+margin-bottom: 30px;
+}
+
+.wrapper .sidebar ul li{
+padding: 15px;
+border-bottom: 1px solid #bdb8d7;
+border-bottom: 1px solid rgba(0,0,0,0.05);
+border-top: 1px solid rgba(255,255,255,0.05);
+}    
+
+.wrapper .sidebar ul li a{
+color: #bdb8d7;
+display: block;
+transition: .4s;
+}
+
+.wrapper .sidebar ul li a .fas{
+width: 25px;
+}
+
+.wrapper .sidebar ul li:hover{
+background-color:red;
+}
+  
+.wrapper .sidebar ul li:hover a{
+color: #fff;
+}
+
+.wrapper .sidebar .social_media{
+position: absolute;
+bottom: 0;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+}
+
+.wrapper .sidebar .social_media a{
+display: block;
+width: 40px;
+background: #594f8d;
+height: 40px;
+line-height: 45px;
+text-align: center;
+margin: 0 5px;
+color: #bdb8d7;
+border-top-left-radius: 5px;
+border-top-right-radius: 5px;
+}
+
+.wrapper .main_content{
+width: 100%;
+margin-left: 200px;
+}
+
+.wrapper .main_content .header{
+padding: 20px;
+background: #fff;
+color: #717171;
+border-bottom: 1px solid #e0e4e8;
+}
+
+.wrapper .main_content .info{
+margin: 20px;
+color: #717171;
+line-height: 25px;
+}
+
+.wrapper .main_content .info div{
+margin-bottom: 20px;
+}
+
+@media (max-height: 500px){
+.social_media{
+  display: none !important;
+}
+}
+.fa-sign-out-alt{
+  color: white;
+  font-size: 2ex;
+}
+.profile ul li a{
+  font-size: 25px;
+}
+
+  </style>
+</head>
+<body>
+
+
+  <section class="bg-danger fixed-top" >
+    <div class="container">
+      <div class="row">
+        <div class="text col-lg-4 col-md-4 col-sm-4 col-2 ">
+          <h3>Blood Donar</h3>
+        </div>
+        <div class="col-lg-4 offset-lg-4 col-md-4 offset-4 col-sm-4 col-2 " >
+          <nav class="navbar navbar-expand  ">
+   
+          <div class="navbar-collapse collapse ">
+                 <ul class="navbar-nav ml-auto">
+                    
+                   <li class="nav-item dropdown">
+                       
+                     <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button"
+                     aria-haspopup="true" aria-expanded="false">
+                     
+                         <img class="rounded-circle" style="width:40px;height:40px;"  src="{{request.user.totaldonar.profile_pic.url}}" class="img-avatar" alt="">
+                     </a>
+                     <div class="dropdown-menu dropdown-menu-right">
+                         <div class="dropdown-header text-center">
+                             <strong>Account</strong>
+                         </div>
+                         
+                         <a class="dropdown-item" href=""><i class="fa fa-user"></i> Profile</a>
+                         <a class="dropdown-item" href=""><i class="fas fa-quidditch"></i>Creat Post</a>
+                         <a class="dropdown-item" href=""><i class="fa fa-wrench"></i> Settings</a>
+                         
+                         <a class="dropdown-item" href="{% url 'logout' %}"><i class="fa fa-lock"></i> Logout</a>
+                     </div>
+                 </li>
+                 </ul>
+             </div>
+           </nav>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-light  bg-danger">
+   
+   
+    <a style="color:white;" class="navbar-brand" href="/"><i class="fab fa-gratipay"></i>&nbsp;<font face = "Comic sans MS" size ="4">Blood Bank Management System</font></a>
+   
+    
+    
+  
+    <div class="header_menu">
+        <ul class="navbar-nav ">
+           
+          <li class="nav-item dropdown">
+              
+            <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button"
+            aria-haspopup="true" aria-expanded="false">
+            
+                <img class="rounded-circle" style="width:40px;height:40px;"  src="{{request.user.totaldonar.profile_pic.url}}" class="img-avatar" alt="">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-header text-center">
+                    <strong>Account</strong>
+                </div>
+                
+                <a class="dropdown-item" href=""><i class="fa fa-user"></i> Profile</a>
+                <a class="dropdown-item" href=""><i class="fas fa-quidditch"></i>Creat Post</a>
+                <a class="dropdown-item" href=""><i class="fa fa-wrench"></i> Settings</a>
+                
+                <a class="dropdown-item" href="{% url 'logout' %}"><i class="fa fa-lock"></i> Logout</a>
+            </div>
+        </li>
+        </ul>
+    </div>
+  </nav> -->
+<br><br>
+<div class="wrapper">
+ <div class="icon">
+  <i class="fas fa-home"></i>
+ </div>
+  <div class="sidebar">
+    
+      <ul>
+          <li><a style="text-decoration:none;" href="{% url 'admin_dashboard'%}"><i class="fas fa-home"></i>Home</a></li>
+          <li><a style="text-decoration:none;" href="{% url 'all-donars'%}"><i class="fas fa-hand-holding-medical"></i> All Donar List</a></li>
+          <li><a style="text-decoration:none;" href="{% url 'donation-status'%}"><i class="fas fa-hand-holding-medical"></i>Donate Blood</a></li>
+          <li><a style="text-decoration:none;" href="{% url 'request_status' %}"><i class="fas fa-hand-holding-medical"></i>Request Blood</a></li>
+          <li><a style="text-decoration:none;" href="{% url 'bloog_post' %}"><i class="fas fa-hand-holding-medical"></i>Blog Post</a></li>
+         
+      </ul> 
+
+  </div>
+ 
+  <div class="main_content">
+
+    <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class=" mt-3 ml-2 h2">
+        {% block dashbord %}
+        
+        {% endblock dashbord %}
+
+      </h1>
+       
+    </div>
+
+    <div class="btn-group ml-3" role="group" aria-label="Basic example">
+      <a href="{% url 'admin_dashboard' %}"><button type="button" class="btn btn-outline-success">Total</button></a>
+      <a href="{% url 'give_blood' %}"><button type="button" class="btn btn-outline-primary">Give</button></a>
+      <a href="{% url 'need_blood' %}"><button type="button" class="btn btn-outline-warning">Need</button></a>
+    </div>
+{% block content %}
+
+{% endblock content %}
+
+
+
+  </div>
+</div>
+
+
+    <script src="{% static 'js/jquery-3.4.0.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.jsn.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+   
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

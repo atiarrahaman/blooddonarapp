@@ -1,0 +1,85 @@
+{% extends "adminbase.html" %}
+{% load static %}
+
+{% block dashbord %}
+       Apply For Give 
+{% endblock dashbord %}
+
+{% block content %}
+<div class="container">
+       <div class="row">
+         <div class="col-sm-12">
+                <h3 class="text-center">For Give</h3>
+         </div>
+     
+       </div>
+     
+       <div class="row">
+         <div class="col-lg-3 col-md-4">
+           <div class="box">
+             <h4>Total give  </h4>
+             <p><i class="fas fa-users"></i> {{total}}</p>
+           </div>
+     
+         </div>
+     
+         <div class="col-lg-3 col-md-4">
+           <div class="box">
+             <h4>A + </h4>
+             <p><i class="fas fa-tint"></i> {{a}}</p>
+           </div>
+         </div>
+     
+         <div class="col-lg-3 col-md-4">
+           <div class="box">
+             <h4>B + </h4>
+             <p><i class="fas fa-tint"></i> {{b}}</p>
+           </div>
+         </div>
+     
+         <div class="col-lg-3 col-md-4">
+           <div class="box">
+             <h4>O + </h4>
+             <p><i class="fas fa-tint"></i> {{o}}</p>
+           </div>
+         </div>
+     
+         <div class="col-lg-3 col-md-4">
+           <div class="box">
+             <h4>AB + </h4>
+             <p><i class="fas fa-tint"></i> {{ab}}</p>
+           </div>
+         </div>
+     
+         <div class="col-lg-3 col-md-4">
+           <div class="box">
+             <h4> A- </h4>
+             <p><i class="fas fa-tint"></i> {{an}}</p>
+           </div>
+         </div>
+         <div class="col-lg-3 col-md-4">
+           <div class="box">
+             <h4>B- </h4>
+             <p><i class="fas fa-tint"></i> {{bn}}</p>
+           </div>
+         </div>
+         <div class="col-lg-3 col-md-4">
+           <div class="box">
+             <h4>O- </h4>
+             <p><i class="fas fa-tint"></i> {{on}}</p>
+           </div>
+         </div>
+         <div class="col-lg-3 col-md-4">
+           <div class="box">
+             <h4>AB- </h4>
+             <p><i class="fas fa-tint"></i> {{ab}}</p>
+           </div>
+         </div>
+       
+       
+       
+       
+     
+       </div>
+     </div>
+{% endblock content %}

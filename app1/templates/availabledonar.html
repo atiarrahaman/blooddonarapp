@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block layoutcontent %}
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-12">
+            <table class="table table-hover table-striped table-bordered mt-4 ">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Blood grp</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Hospital</th>
+                    <th scope="col">blood weight</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Apply date</th>
+                    
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                {%  for i in available %}
+                  <tr class="table-success">
+                
+                    <td >{{i.user}}</td>
+                    <td>{{i.blood_group}}</td>
+                    <td>{{i.phone}}</td>
+                    <td>{{i.hospital}}</td>
+                    <td>{{i.bloodweight}}</td>
+                    <td>{{i.adreess}}</td>
+                    <td>{{i.date}}</td>
+                    <td>{{i.apply_date}}</td>
+                    
+                    
+                  </tr>
+        
+                {%  endfor %}
+                  
+                    
+                  </tr>
+                </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+{% endblock layoutcontent %}

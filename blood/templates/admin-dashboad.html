@@ -1,0 +1,89 @@
+{% extends "adminbase.html" %}
+{% block dashbord %}
+       Admin-dashboard 
+{% endblock dashbord %}
+{% block content %}
+{% if messages %}
+{% for message in messages %}
+ <p {% if message.tags %} class="{{message.tags}}  alert alert-success text-center"  {% endif%}> {{message}}</p>
+{% endfor %}
+{% endif %} 
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+           <h3 class="text-center">Total Blood</h3>
+    </div>
+
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3 col-md-4">
+      <div class="box">
+        <h4>Total Blood Donar </h4>
+        <p><i class="fas fa-users"></i> {{alldonar}}</p>
+      </div>
+
+    </div>
+
+    <div class="col-lg-3 col-md-4">
+      <div class="box">
+        <h4>A + </h4>
+        <p><i class="fas fa-tint"></i> {{a}}</p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4">
+      <div class="box">
+        <h4>B + </h4>
+        <p><i class="fas fa-tint"></i> {{b}}</p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4">
+      <div class="box">
+        <h4>O + </h4>
+        <p><i class="fas fa-tint"></i> {{o}}</p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4">
+      <div class="box">
+        <h4>AB + </h4>
+        <p><i class="fas fa-tint"></i> {{ab}}</p>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-4">
+      <div class="box">
+        <h4> A- </h4>
+        <p><i class="fas fa-tint"></i> {{an}}</p>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4">
+      <div class="box">
+        <h4>B- </h4>
+        <p><i class="fas fa-tint"></i> {{bn}}</p>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4">
+      <div class="box">
+        <h4>O- </h4>
+        <p><i class="fas fa-tint"></i> {{on}}</p>
+      </div>
+    </div>
+    <div class="col-lg-3 col-md-4">
+      <div class="box">
+        <h4>AB- </h4>
+        <p><i class="fas fa-tint"></i> {{ab}}</p>
+      </div>
+    </div>
+  
+  
+  
+  
+
+  </div>
+</div>
+ 
+
+{% endblock content %}

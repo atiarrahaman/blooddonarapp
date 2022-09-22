@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block dashbord %}
+Donation History
+{% endblock dashbord %}
+{% block content %}
+<h4 class="alert alert-success text-center"> Your Donation history</h4>
+  <div class="container">
+      <div class="row ">
+        
+        {% if donation_history %}
+        {% for i in donation_history %}
+        <div class="col-lg-4 col-md-4">
+          <div class="donate_history"> 
+    
+                    
+              <div class="donate_content">
+                <p> <b>Name :</b> <span>{{i.user|title}}</span> </p>
+                <p> <b>Donate No:</b> <span>{{i.id}}</span> </p>
+                <p> <b>Blood grp :</b>{{i.blood_group}} </p>
+                <p> <b>Phone :</b>{{i.phone}} </p>
+                <p> <b>Hospital :</b>{{i.hospital}} </p>
+                <p> <b>Donate Date :</b>{{i.date}} </p>
+                <p> <b>Apply date :</b> {{i.apply_date}}</p>
+                <p> <b> Action :</b>{% if i.done_status == True %} <span class=" text-success ">Approved</span> {% elif i.status == True  and i.done_status == False %} <span class="text-danger">Rejects</span> {% else %} <span class="text-warning">Pending</span> {% endif %} </p>
+              </div>
+              
+               
+               
+            </div>
+        </div>
+        {% endfor %}
+        {%else %}
+        <h4 class="text-danger">No data</h4>
+        {% endif %}
+        
+      </div>
+  </div>
+{% endblock content %}
+
+
+<!-- <table class="table table-hover table-striped table-bordered mt-4 ">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Blood grp</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Hospital</th>
+      <th scope="col">blood weight</th>
+      <th scope="col">Address</th>
+      <th scope="col">Date</th>
+      <th scope="col">Apply date</th>
+      <th scope="col">Action</th>
+
+      
+      
+    </tr>
+  </thead>
+  <tbody>
+  {%  for i in donation_history %}
+    <tr class="table-success">
+  
+      <td >{{i.user}}</td>
+      <td>{{i.blood_group}}</td>
+      <td>{{i.phone}}</td>
+      <td>{{i.hospital}}</td>
+      <td>{{i.bloodweight}}</td>
+      <td>{{i.adreess}}</td>
+      <td>{{i.date}}</td>
+      <td>{{i.apply_date}}</td>
+      <td> {% if i.done_status == True %} <span class="text-success">Approved</span> {% elif i.status == True  and i.done_status == False %} <span class="text-danger">Rejects</span> {% else %} <span class="text-warning">Pending</span> {% endif %} </td>
+      
+      
+    </tr>
+
+  {%  endfor %}
+    
+      
+    </tr>
+  </tbody>
+</table> -->

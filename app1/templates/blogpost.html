@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% load static %}
+{% load humanize %}
+{% block layoutcontent %}
+  <div class="container">
+    <div class="row">
+      
+       {% if post %}
+       {% for i in post %}
+       <div class="col-md-6">
+         
+        <div class="post">
+          
+          <div class="user">
+            
+           <a href=""> <img class="rounded-circle" style="width:40px;height:40px;"  src="{{i.user.totaldonar.profile_pic.url}}" class="img-avatar" alt=""> <span> <b>{{i.author}}</b> </span></a>
+             <p><i class="fas fa-calendar-alt"></i> {{i.creat_date|naturaltime}} </p>
+             
+          
+          </div>
+          <div class="img">
+            <img src="{{i.upload_pic.url}}" alt="">
+          </div>
+        
+           
+           <div class="content">
+            <a href="{% url 'detailsBlogpost' i.id %}"><h4>{{i.title}}</h4></a>
+            <p>{{i.text |striptags| slice:":80"}}</p>
+            
+            
+           </div>
+           <a href="{% url 'detailsBlogpost' i.id %}" class="btn btn-info "> Read More...</a>
+       
+       
+          </div>
+      </div>
+       {% endfor %}
+       {% else %}
+        <h3 class="text-danger">No Data right Now</h3>
+       {% endif %}
+    </div>
+  </div>
+
+
+
+{% endblock layoutcontent %}

@@ -1,0 +1,84 @@
+{% extends "adminbase.html" %}
+{% block dashbord %}
+Donation List
+{% endblock dashbord %}
+{% block content %}
+<h4 class="alert alert-success text-center"> User Want Donation</h4>
+  <div class="container">
+      <div class="row col-sm-12">
+        
+       {% if table %} 
+        <table class="admintable table table-hover table-striped table-bordered mt-4 ">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Blood grp</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Hospital</th>
+                <th scope="col">blood weight</th>
+                <th scope="col">Address</th>
+                <th scope="col">Date</th>
+                <th scope="col">Apply date</th>
+                <th scope="col">Action</th>
+
+                
+                
+              </tr>
+            </thead>
+            <tbody>
+            {%  for i in table %}
+              <tr class="table-success">
+            
+                <td >{{i.user}}</td>
+                <td>{{i.blood_group}}</td>
+                <td>{{i.phone}}</td>
+                <td>{{i.hospital}}</td>
+                <td>{{i.bloodweight}}</td>
+                <td>{{i.adreess}}</td>
+                <td>{{i.date}}</td>
+                <td>{{i.apply_date}}</td>
+                <td>
+                  <a class="btn btn-primary" href="{% url 'movedonar' i.id 1 %}">Aprove</a>
+                  <a class="btn btn-danger" href="{% url 'rejects' i.id 0  %}">Reject</a>
+                </td>
+                
+                
+              </tr>
+    
+            {%  endfor %}
+              
+                
+              </tr>
+            </tbody>
+          </table>
+        {% else %}
+        <h3 class="text-danger">No Data</h3>
+         {% endif %}
+
+         
+     {% for i in table %}
+     <div class="">
+       <div class="donate_history"> 
+ 
+                 
+           <div class="donate_content">
+             <p> <b>Name :</b> <span>{{i.user|title}}</span> </p>
+             <p> <b>Donate No:</b> <span>{{i.id}}</span> </p>
+             <p> <b>Blood grp :</b>{{i.blood_group}} </p>
+             <p> <b>Phone :</b>{{i.phone}} </p>
+             <p> <b>Hospital :</b>{{i.hospital}} </p>
+             <p> <b>Hospital :</b>{{i.adreess}} </p>
+             <p> <b>Donate Date :</b>{{i.date}} </p>
+             <p> <b>Apply date :</b> {{i.apply_date}}</p>
+             <a class="btn btn-primary" href="{% url 'movedonar' i.id 1 %}">Aprove</a>
+              <a class="btn btn-danger" href="{% url 'rejects' i.id 0  %}">Reject</a>
+           </div>
+           
+            
+            
+         </div>
+     </div>
+     {% endfor %}
+      </div>
+  </div>
+{% endblock content %}
